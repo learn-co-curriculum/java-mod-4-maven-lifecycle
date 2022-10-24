@@ -32,13 +32,34 @@ A Maven phase represents a stage in a lifecycle.
 Each phase is a sequence of goals, and each goal is responsible for a specific task.
 
 The default life cycle consists of
-[23 phases](https://maven.apache.org/guides/introduction/introduction-to-the-lifecycle.html#Lifecycle_Reference)
+[23 phases](https://maven.apache.org/guides/introduction/introduction-to-the-lifecycle.html#Lifecycle_Reference).
+The phases are executed sequentially.  For example, if the `test` phase is
+executed, all phases before it must execute. 
 
-The image below shows the first 15 phases up to **test**.
-The phases are executed sequentially.  If the `test` phase is
-executed, all phases before it must execute.
+1. validate 
+2. initialize
+3. generate-sources
+4. process-sources
+5. generate-resources
+6. process-resources
+7. compile
+8. process-classes
+9. generate-test-sources
+10. process-test-sources
+11. generate-test-resources
+12. process-test-resources
+13. test-compile
+14. process-test-classes
+15. test
+16. prepare-package
+17. package
+18. pre-integration-test
+19. integration-test
+20. post-integration-test
+21. verify
+22. install
+23. deploy
 
-![default life cycle phases](https://curriculum-content.s3.amazonaws.com/6002/creating-a-maven-project/defaultlifecycle.png)
 
 Consider what must happen to run a Junit test.
 The Junit test class must be compiled before we can
@@ -58,7 +79,7 @@ lifecycle of clearly defined phases.
 
 Let's explore some of this using IntelliJ's Maven Tool Window,
 which can be opened either by clicking on "Maven" along
-the edge of the IntelliJ window, or by selecting ** View | Tool Windows | Maven**
+the edge of the IntelliJ window, or by selecting View | Tool Windows | Maven
 from the main menu.
   
 ![maven tool window](https://curriculum-content.s3.amazonaws.com/6002/creating-a-maven-project/maventoolwindow.png)
@@ -101,11 +122,11 @@ select the phase in the LifeCycle folder and press run.
 Let's see how IntelliJ builds the project when we change the code
 and need to recompile. 
 
-Edit the `main` method to print "Hello" instead of "Hello World!", then:
+Edit the `main` method to print "Hello!" instead of "Hello World!", then:
 
 1. Press the build icon on the bottom toolbar to display the build view.
 2. Press the build icon on the top toolbar or
-   select **Build | Build Project** from the main menu to build the project.  
+   select Build | Build Project from the main menu to build the project.  
 
 ![build](https://curriculum-content.s3.amazonaws.com/6002/life-cycles-phases-and-goals/build.png)
 
@@ -129,7 +150,7 @@ resources are available, etc.
 Let's run the `main` method to how the build process is triggered:
 
 1. Edit the `main` method and change the code to print "Goodbye".  
-2. Press the run button on the toolbar or select **Run | Run** from the main menu.
+2. Press the run button on the toolbar or select Run | Run from the main menu.
 
 Since we've changed the source code, the project must be rebuilt
 before we can run the code. We can see in the build view the
