@@ -1,8 +1,10 @@
-# Lifecycles, phases, and goals
+# Maven Lifecycle
 
 ## Learning Goals
-
-- Define the relationships between Maven Lifecycles, Phases, Goals, and Plugins
+ 
+- Define the relationships between Maven lifecycles, phases, goals, and plugins.
+- Use IntelliJ's Maven Tool Window to execute a specific phase or goal.
+- Use Maven to build and execute a Java program. 
 
 ## Introduction
 
